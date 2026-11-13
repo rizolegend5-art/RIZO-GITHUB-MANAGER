@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "RIZO GITHUB MANAGER",
+    "slug": "rizo-github-manager",
+    "scheme": "rizogithubmanager",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-document-picker",
+      "expo-notifications"
+    ],
+    "android": {
+      "package": "com.rizo.githubmanager",
+      "versionCode": 1,
+      "permissions": [
+        "INTERNET",
+        "POST_NOTIFICATIONS"
+      ]
+    }
+  }
+}

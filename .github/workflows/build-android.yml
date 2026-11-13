@@ -1,0 +1,20 @@
+name: Build RIZO Android APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm install --global eas-cli
+      - name: Build APK using Expo EAS
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          EXPO_PUBLIC_EAS_PROJECT_ID: ${{ vars.EXPO_PUBLIC_EAS_PROJECT_ID }}
+        run: eas build --platform android --profile preview --non-interactive
